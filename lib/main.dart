@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learning/blocs/authentication/authentication_bloc.dart';
 import 'package:learning/repositories/authentication_repositories.dart';
 import 'package:learning/views/authenticate/authenticate_screen.dart';
+import 'package:learning/views/dashboard/dashboard_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const AuthenticatedScreen(),
+        home: const DashboardScreen(),
       ),
     );
   }
