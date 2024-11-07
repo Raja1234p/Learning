@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learning/blocs/authentication/authentication_bloc.dart';
+import 'package:learning/views/dashboard/dashboard_screen.dart';
 
 class AuthenticatedScreen extends StatelessWidget {
   const AuthenticatedScreen({super.key});
@@ -17,6 +18,10 @@ class AuthenticatedScreen extends StatelessWidget {
           if (state is AuthenticationSuccess) {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text('you are authorized')),
+            );
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const DashboardScreen()),
             );
           } else if (state is AuthenticationFailure) {
             ScaffoldMessenger.of(context).showSnackBar(

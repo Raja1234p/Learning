@@ -20,8 +20,9 @@ class CustomContainer extends StatelessWidget {
           begin: Alignment(1.0, -0.5),
           end: Alignment(0.0, 1.0),
           colors: [
-            Color.fromRGBO(222, 122, 114, 0.8),
+
             Color(0xFFDE7A72),
+            Color.fromRGBO(222, 122, 114, 0.8),
           ],
           stops: [0.0188, 1.0],
         ),

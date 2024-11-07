@@ -16,12 +16,10 @@ class AuthenticationBloc
   final LocalAuthUtil _authUtil = LocalAuthUtil.instance;
   AuthenticationBloc(this._authenticationRepository)
       : super(AuthenticationInitial()) {
-    on<AuthenticationEvent>((event, emit) async {
-      // Call the helper function to check biometrics availability
+    on<AuthenticateEvent>((event, emit) async {
       await _checkBiometricsAvailability(emit);
     });
   }
-  // Helper function to check biometrics availability
   Future<void> _checkBiometricsAvailability(
       Emitter<AuthenticationState> emit) async {
     bool biometricsAvailable = await _authUtil.canCheckBiometrics();
