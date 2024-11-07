@@ -10,7 +10,7 @@ class DefaultComplaintEvent extends DashboardEvent {
 }
 // New event to add a complaint
 class AddComplaintEvent extends DashboardEvent {
-  final Complaint newComplaint;
+  final Compliant newComplaint;
 
   const AddComplaintEvent({required this.newComplaint});
 
@@ -21,7 +21,7 @@ class AddComplaintEvent extends DashboardEvent {
 // New event to update a complaint (by its index)
 class UpdateComplaintEvent extends DashboardEvent {
   final int complaintIndex; // Index of the complaint to update
-  final Complaint updatedComplaint; // Updated complaint data
+  final Compliant updatedComplaint; // Updated complaint data
 
   const UpdateComplaintEvent({required this.complaintIndex, required this.updatedComplaint});
 

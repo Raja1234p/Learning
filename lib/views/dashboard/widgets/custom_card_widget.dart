@@ -4,7 +4,7 @@ import 'package:learning/common_widgets/text_widget.dart';
 import '../model/complaint_model.dart';
 
 class ShadowedContainer extends StatelessWidget {
-  final Complaint complaint;
+  final Compliant complaint;
   const ShadowedContainer({super.key, required this.complaint});
 
   @override

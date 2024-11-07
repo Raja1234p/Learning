@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../model/complaint_model.dart';
 
 class ComplaintBottomSheet extends StatefulWidget {
-  final Complaint?
+  final Compliant?
       complaint;
-  final Function(Complaint) onSave; // Callback to save the updated complaint
+  final Function(Compliant) onSave; // Callback to save the updated complaint
 
   const ComplaintBottomSheet({super.key, this.complaint, required this.onSave});
 
@@ -52,7 +52,7 @@ class _ComplaintBottomSheetState extends State<ComplaintBottomSheet> {
   void _onSave() {
     if (_formKey.currentState!.validate()) {
       // Create a new complaint object
-      final updatedComplaint = Complaint(
+      final updatedComplaint = Compliant(
         complaintNumber: _complaintNumberController.text,
         complaintDescription: _complaintDescriptionController.text,
         status: _statusController.text,

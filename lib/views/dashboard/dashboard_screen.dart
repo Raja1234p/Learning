@@ -92,7 +92,7 @@ class DashboardScreen extends StatelessWidget {
           BlocBuilder<DashboardBloc, DashboardState>(
             buildWhen: (previousState, currentState) {
               // Only rebuild if the complaints list has changed
-              return previousState.complaint != currentState.complaint;
+              return previousState.compliant != currentState.compliant;
             },
             builder: (context, state) {
               return Expanded(
@@ -100,7 +100,7 @@ class DashboardScreen extends StatelessWidget {
                     separatorBuilder: (_, __) => const SizedBox(
                           height: 10,
                         ),
-                    itemCount: state.complaint.length,
+                    itemCount: state.compliant.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
@@ -108,7 +108,7 @@ class DashboardScreen extends StatelessWidget {
                             context: context,
                             builder: (context) {
                               return ComplaintBottomSheet(
-                                complaint: state.complaint[
+                                complaint: state.compliant[
                                     index], // Pass the complaint to edit
                                 onSave: (updatedComplaint) {
                                   // Call your Bloc to update the complaint
@@ -124,7 +124,7 @@ class DashboardScreen extends StatelessWidget {
                           );
                         },
                         child: ShadowedContainer(
-                          complaint: state.complaint[index],
+                          complaint: state.compliant[index],
                         ),
                       );
                     }),
